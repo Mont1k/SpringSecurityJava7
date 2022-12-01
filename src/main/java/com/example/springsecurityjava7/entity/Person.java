@@ -40,9 +40,15 @@ public class Person implements UserDetails {
         Set<Role> roles = getRoles();
         List<SimpleGrantedAuthority>authorities = new ArrayList<>();
         for (Role role:roles){
-            authorities.add(new SimpleGrantedAuthority(role.getName()))
+            authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
         return authorities;
+    }
+
+
+
+    public String getPassword() {
+        return password;
     }
 
     @Override
